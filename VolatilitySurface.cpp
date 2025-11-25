@@ -1,3 +1,19 @@
+/*
+In this project, I practice what I have so far learnt about object oriented programming in C++. Here I write a programme which takes as input a csv file containing strike prices, expiry dates, and market prices of call and put options for a given stock, 
+and outputs a csv file containing the implied volatility surface for the stock. To do this, I create a class which represents a European vanilla option. 
+For each strike price, expiry date, type, and market price, we create an instance of this class and use the Newton-Raphson algorithm (a built in member function of the class) to estimate the implied volatility of the option. 
+
+I thought that this project in particular would be a good way to revise concepts such as public and private access to the class members, using the `this` pointer, initialising setters and getters and more concepts which I have learnt to do with OOP in C++ currently. 
+The class is certainly not perfect. I doubt any real quant would produce a volatility surface in this way, but I enjoyed making it nonetheless.  I also got to study libraries such as ctime and chrono, so that I could compute times to expiry of options. 
+I would also like to add that I consider this a first edition of this project. As I learn more about OOP, I'm sure I will be able to improve this project. 
+Moreover, after reading chapter 20 of Hull's : 'Options, Futures, and Other Derivatives' textbook, I know that there are more ways to produce volatility surfaces, for example using the delta of the option as an axis rather than moneyness. 
+There are also ways to reduce the influence on the price of the underlying asset. These are concepts I hope to implement in C++ later on once I've had more time to study them and practice coding. 
+I have tried to reference any material which I have taken from the internet where necessary. For example, the `days_from_civil` function, which computes the number of days from a specified date, is not mine. 
+I found it online and have included the link to the website within the file. If I have missed any references that should be included. I apologise. Please reach out so that I may correct this where needed.
+*/
+
+
+
 #include<iostream> 
 #include<vector>
 #include<tuple> 
@@ -363,4 +379,5 @@ int main(){
         }
     } else std::cout<<"Error: File not open."<<std::endl;
     outputData.close();
+
 }
